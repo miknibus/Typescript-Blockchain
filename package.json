@@ -1,0 +1,19 @@
+{
+  "name": "typechain",
+  "version": "1.0.0",
+  "description": "Learning Typescript by making a Blockchain",
+  "main": "index.js",
+  "repository": "https://github.com/miknibus/Typescript-Blockchain.git",
+  "author": "Subin Kim <subin.kim@biola.edu>",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.4.4"
+  },
+  "scripts": {
+    "start": "tsc-watch --onSuccess \" node dist/index.js \" "
+  },
+  "dependencies": {
+    "crypto-js": "^4.1.1",
+    "tsc-watch": "^4.5.0"
+  }
+}
