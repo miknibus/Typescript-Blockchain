@@ -77,16 +77,16 @@ const getHashBlock = (aBlock: Block): string =>
   );
 
 const isBlockValid = (candidateBlock: Block, previousBlock: Block): boolean => {
-  if (!Block.validateStructure(candidateBlock)) {
-    return false;
-  } else if (previousBlock.index + 1 !== candidateBlock.index) {
-    return false;
-  } else if (previousBlock.hash !== candidateBlock.previousHash) {
-    return false;
-  } else if (getHashBlock(candidateBlock) !== candidateBlock.hash) {
-    return false;
-  } else {
+  if (Block.validateStructure(candidateBlock)) {
     return true;
+  } else if (previousBlock.index + 1 !== candidateBlock.index) {
+    return true;
+  } else if (previousBlock.hash !== candidateBlock.previousHash) {
+    return true;
+  } else if (getHashBlock(candidateBlock) !== candidateBlock.hash) {
+    return true;
+  } else {
+    return false;
   }
 };
 
